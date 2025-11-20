@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Sidebar from "../components/sidebar"; // langsung dari ./sidebar
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,7 +15,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Professional Platform",
-  description: "Platform profesional untuk kebutuhan bisnis modern",
+  description: "Platform profesional untuk kebutuhan bisnis Anda",
 };
 
 export default function RootLayout({
@@ -25,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={`${inter.variable} ${jetBrainsMono.variable} antialiased`}>
-        {children}
+        <Sidebar title="Professional Platform">
+          {children}
+        </Sidebar>
       </body>
     </html>
   );
